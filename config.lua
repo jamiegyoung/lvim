@@ -14,3 +14,6 @@ lvim.plugins = {
 }
 
 lvim.colorscheme = "catppuccin-latte"
+
+vim.opt.relativenumber = true
+
