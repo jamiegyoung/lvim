@@ -5,13 +5,6 @@
 lvim.plugins = {
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   {
-    "ggandor/leap.nvim",
-    name = "leap",
-    config = function()
-      require("leap").add_default_mappings()
-    end,
-  },
-  {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
     event = "InsertEnter",
@@ -25,7 +18,7 @@ lvim.plugins = {
   },
 }
 
-lvim.colorscheme = "catppuccin-latte"
+lvim.colorscheme = "catppuccin-frappe"
 
 vim.opt.relativenumber = true
 
