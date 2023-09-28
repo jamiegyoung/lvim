@@ -27,6 +27,11 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   command = [[%s/\s\+$//e]],
 })
 
+-- set columncolor to 80
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+  pattern = { "*" },
+  command = [[set colorcolumn=80]],
+})
 
 local ok, copilot = pcall(require, "copilot")
 if not ok then
