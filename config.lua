@@ -19,6 +19,7 @@ lvim.plugins = {
 }
 
 lvim.colorscheme = "catppuccin-frappe"
+lvim.transparent_window = true
 
 vim.opt.relativenumber = true
 
