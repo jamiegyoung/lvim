@@ -27,6 +27,7 @@ lvim.plugins = {
 }
 
 lvim.colorscheme = "catppuccin-frappe"
+lvim.transparent_window = true
 
 -- Hop config
 local hop = require('hop')
