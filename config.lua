@@ -37,6 +37,7 @@ formatters.setup {
   {
     name = "black",
     filetypes = { "python" },
+    extra_args = { "--line-length", "79" },
   }
 }
 
