@@ -29,6 +29,17 @@ lvim.plugins = {
 lvim.colorscheme = "catppuccin-frappe"
 lvim.transparent_window = true
 
+
+-- Formatters
+
+local formatters = require "lvim.lsp.null-ls.formatters"
+formatters.setup {
+  {
+    name = "black",
+    filetypes = { "python" },
+  }
+}
+
 -- Hop config
 local hop = require('hop')
 local directions = require('hop.hint').HintDirection
@@ -78,3 +89,4 @@ copilot.setup {
 
 local opts = { noremap = true, silent = true }
 vim.api.nvim_set_keymap("n", "<c-s>", "<cmd>lua require('copilot.suggestion').toggle_auto_trigger()<CR>", opts)
+
