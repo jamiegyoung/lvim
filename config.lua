@@ -86,6 +86,9 @@ copilot.setup {
       dismiss = "<c-h>",
     },
   },
+  filetypes = {
+    markdown = true
+  }
 }
 
 local opts = { noremap = true, silent = true }
