@@ -8,6 +8,22 @@ lvim.plugins = {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
     event = "InsertEnter",
+    config = function()
+      require("copilot").setup {
+        suggestion = {
+          keymap = {
+            accept = "<c-l>",
+            next = "<c-j>",
+            prev = "<c-k>",
+            dismiss = "<c-h>",
+          },
+        },
+        filetypes = {
+          markdown = true,
+          gitcommit = true
+        }
+      }
+    end,
   },
   {
     "zbirenbaum/copilot-cmp",
@@ -15,15 +31,6 @@ lvim.plugins = {
     config = function()
       require("copilot_cmp").setup()
     end,
-  },
-  {
-    "iamcco/markdown-preview.nvim",
-    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    build = "cd app && yarn install",
-    init = function()
-      vim.g.mkdp_filetypes = { "markdown" }
-    end,
-    ft = { "markdown" },
   },
 }
 
@@ -55,21 +62,12 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
   command = [[set colorcolumn=80]],
 })
 
-local ok, copilot = pcall(require, "copilot")
-if not ok then
-  return
-end
-
-copilot.setup {
-  suggestion = {
-    keymap = {
-      accept = "<c-l>",
-      next = "<c-j>",
-      prev = "<c-k>",
-      dismiss = "<c-h>",
-    },
-  },
-}
-
-local opts = { noremap = true, silent = true }
-vim.api.nvim_set_keymap("n", "<c-s>", "<cmd>lua require('copilot.suggestion').toggle_auto_trigger()<CR>", opts)
+vim.api.nvim_set_keymap(
+  "n",
+  "<c-s>",
+  "<cmd>lua require('copilot.suggestion').toggle_auto_trigger()<CR>",
+  {
+    noremap = true,
+    silent = true
+  }
+)
