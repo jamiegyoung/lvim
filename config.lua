@@ -22,7 +22,7 @@ lvim.plugins = {
           markdown = true,
           gitcommit = true
         }
-      }
+     }
     end,
   },
   {
@@ -37,7 +37,14 @@ lvim.plugins = {
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     ft = { "markdown" },
     build = function() vim.fn["mkdp#util#install"]() end,
-  }
+  },
+  {
+    "ggandor/leap.nvim",
+    name = "leap",
+    config = function()
+      require("leap").add_default_mappings()
+    end,
+  },
 }
 
 lvim.colorscheme = "catppuccin-frappe"
