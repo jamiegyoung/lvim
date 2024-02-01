@@ -84,3 +84,5 @@ vim.api.nvim_set_keymap(
     silent = true
   }
 )
+
+vim.keymap.set("i", "jj", "<Esc>", { noremap = true, silent = true })
