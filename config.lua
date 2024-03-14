@@ -22,7 +22,7 @@ lvim.plugins = {
           markdown = true,
           gitcommit = true
         }
-     }
+      }
     end,
   },
   {
@@ -57,8 +57,17 @@ formatters.setup {
     name = "black",
     filetypes = { "python" },
     extra_args = { "--line-length", "79" },
-  }
+  },
 }
+
+local linters = require "lvim.lsp.null-ls.linters"
+linters.setup({
+  {
+    name = "golangci_lint",
+    filetypes = { "go" },
+  }
+})
+
 
 -- Set relative line numbers
 vim.opt.relativenumber = true
