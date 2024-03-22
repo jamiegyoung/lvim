@@ -94,4 +94,6 @@ vim.api.nvim_set_keymap(
   }
 )
 
-vim.keymap.set("i", "jj", "<Esc>", { noremap = true, silent = true })
+vim.keymap.set("i", "kj", "<Esc>", { noremap = true, silent = true })
+vim.opt.guifont = "FiraCode Nerd Font:h13"
+
